@@ -18,9 +18,9 @@
       //Usually, you put script-tags into the head
 
       function callAPI(url) {
-        $.post(url, function (data) {
+        $.get(url, function (data) {
           //As soon as the browser finished downloading, this function is called.
-          $("#demo").html("Following data was copied<br>" + data.id);
+          $("#demo").html("Following data was copied<br>" + data);
         });
       }
     </script>
@@ -43,7 +43,7 @@
               class="btn waves-effect waves-light"
               type="submit"
               name="action"
-              onclick="callAPI('https://reqres.in/api/users?page=2')"
+              onclick="callAPI('localhost:8081/mysql2hadoop')"
             >
               Trigger Data Sync from MySQL to Hadoop
               <i class="material-icons right">send</i>
@@ -58,7 +58,7 @@
               class="btn waves-effect waves-light"
               type="submit"
               name="action"
-              onclick="callAPI('https://reqres.in/api/users?page=2')"
+              onclick="callAPI('localhost:8081/hadoop2mysql')"
             >
               Trigger Data Sync from Hadoop to MySQL
               <i class="material-icons right">send</i>
